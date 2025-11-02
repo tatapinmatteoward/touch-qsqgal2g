@@ -1,0 +1,220 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "About TouchdownBet Zone";
+const pageDescription = "Discover the story behind TouchdownBet Zone, your ultimate hub for football betting insights and fantasy strategies, illuminated by a futuristic neon grid theme.";
+
+const features = [
+  {
+    icon: "fas fa-bolt",
+    title: "Real-Time Analytics",
+    description: "Cutting-edge statistical models for instant decision making"
+  },
+  {
+    icon: "fas fa-chart-line",
+    title: "Expert Picks",
+    description: "Professional insights from top analysts"
+  },
+  {
+    icon: "fas fa-users",
+    title: "Fantasy Leagues",
+    description: "Compete with other players in exciting leagues"
+  },
+  {
+    icon: "fas fa-globe",
+    title: "Global Coverage",
+    description: "Comprehensive analysis from leagues worldwide"
+  }
+];
+
+const stats = [
+  { value: "50K+", label: "Active Users" },
+  { value: "98%", label: "Accuracy Rate" },
+  { value: "24/7", label: "Support Available" },
+  { value: "150+", label: "Leagues Covered" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section with Neon Grid -->
+  <div class="relative min-h-screen overflow-hidden bg-gray-900">
+    <div class="absolute inset-0 z-0">
+      <div class="grid grid-cols-12 gap-0 h-full">
+        {Array.from({ length: 144 }).map((_, i) => (
+          <div key={i} class="border border-gray-800"></div>
+        ))}
+      </div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent"></div>
+    </div>
+    
+    <div class="relative z-10 container mx-auto px-4 h-full flex items-center">
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">TouchdownBet</span>
+          <br />
+          <span class="text-white">Zone</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
+          Your Ultimate Hub for Football Betting Insights and Fantasy Strategies
+        </p>
+        <div class="flex space-x-4">
+          <button class="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg font-semibold hover:from-blue-700 hover:to-cyan-600 transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/20">
+            Explore Insights
+          </button>
+          <button class="px-8 py-3 border border-cyan-500 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all">
+            Join Community
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <i class="fas fa-chevron-down text-cyan-400 text-2xl"></i>
+    </div>
+  </div>
+
+  <!-- Mission Section -->
+  <section class="py-20 relative">
+    <div class="absolute inset-0 z-0">
+      <div class="grid grid-cols-8 gap-0 h-full">
+        {Array.from({ length: 64 }).map((_, i) => (
+          <div key={i} class="border border-gray-800 border-opacity-50"></div>
+        ))}
+      </div>
+    </div>
+    
+    <div class="relative z-10 container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-4xl font-bold mb-6 text-white">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Our Mission</span>
+        </h2>
+        <div class="h-1 w-32 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mb-8 rounded-full"></div>
+        <p class="text-xl text-gray-300">
+          We believe that informed decisions lead to thrilling victories. Founded by passionate football enthusiasts and data-driven analysts, 
+          TouchdownBet Zone bridges the gap between raw stats and real-time excitement.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-4">What We Stand For</h3>
+          <p class="text-gray-300 mb-6">
+            In the electrifying world of football, where every play can change the game, TouchdownBet Zone stands as your ultimate hub for 
+            football betting insights and fantasy strategies. Our tagline isn't just words—it's a promise: delivering cutting-edge analysis, 
+            expert picks, and innovative tools to elevate your game.
+          </p>
+          <p class="text-gray-300">
+            Whether you're a seasoned bettor or a fantasy league newbie, we're here to light up your path with neon-bright insights.
+          </p>
+        </div>
+        <div class="bg-gray-800/50 backdrop-blur-sm border border-cyan-500/30 rounded-xl p-8 shadow-xl shadow-cyan-500/10">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center mr-4">
+              <i class="fas fa-lightbulb text-white text-xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white">Futuristic Approach</h4>
+          </div>
+          <p class="text-gray-300 mb-4">
+            We blend traditional football knowledge with modern technology to deliver insights that matter. Our algorithms process vast amounts 
+            of data to identify betting opportunities others might miss.
+          </p>
+          <div class="flex space-x-2">
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm">AI Analysis</span>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm">Real-Time Updates</span>
+            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm">Expert Opinions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-gradient-to-b from-gray-900 to-gray-950">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 text-white">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">What Sets Us Apart</span>
+        </h2>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+          Experience football betting like never before with our unique ecosystem
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature, index) => (
+          <div 
+            key={index} 
+            class="bg-gray-800/40 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 transition-all duration-300 hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/10 group"
+          >
+            <div class="w-14 h-14 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i class={`fas ${feature.icon} text-white text-xl`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">{feature.title}</h3>
+            <p class="text-gray-400">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-20 relative">
+    <div class="absolute inset-0 z-0">
+      <div class="grid grid-cols-12 gap-0 h-full">
+        {Array.from({ length: 144 }).map((_, i) => (
+          <div key={i} class="border border-gray-800 border-opacity-30"></div>
+        ))}
+      </div>
+    </div>
+    
+    <div class="relative z-10 container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map((stat, index) => (
+          <div 
+            key={index} 
+            class="text-center py-10 border border-cyan-500/20 rounded-xl bg-gray-800/30 backdrop-blur-sm hover:border-cyan-400/50 transition-all"
+          >
+            <div class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">
+              {stat.value}
+            </div>
+            <div class="text-gray-400">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-blue-900/30 to-cyan-900/30">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-6 text-white">Ready to Elevate Your Game?</h2>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+        Join thousands of football enthusiasts who trust TouchdownBet Zone for their betting and fantasy needs
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg font-bold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/20">
+          Start Free Trial
+        </button>
+        <button class="px-8 py-4 border border-cyan-400 text-cyan-400 rounded-lg font-bold text-lg hover:bg-cyan-500/10 transition-all">
+          View Pricing
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes gridPulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+    100% { opacity: 0.3; }
+  }
+  
+  .animate-grid {
+    animation: gridPulse 3s infinite;
+  }
+  
+  .neon-border {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5), 0 0 20px rgba(0, 123, 255, 0.3);
+  }
+</style>

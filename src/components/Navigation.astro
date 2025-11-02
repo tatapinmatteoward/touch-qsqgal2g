@@ -1,0 +1,101 @@
+---
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/match-analyzer', label: 'Match-Analyzer' },
+  { href: '/betting-insights', label: 'Betting-Insights' },
+  { href: '/fantasy-tips', label: 'Fantasy-Tips' },
+  { href: '/draft-picks', label: 'Draft-Picks' },
+  { href: '/about', label: 'About' },
+  { href: '/blog', label: 'Blog' }
+];
+---
+
+<nav class="bg-black border-b-2 border-[#007bff]">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-[#007bff] hover:text-[#ff1744] transition-colors duration-300">
+        TouchdownBet Zone
+      </a>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex gap-6">
+        {navItems.map((item) => (
+          <a 
+            href={item.href} 
+            class="text-gray-300 hover:text-[#007bff] transition-colors duration-300 relative group"
+          >
+            {item.label}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#007bff] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        ))}
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden text-[#007bff]">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 flex flex-col gap-3 pb-4">
+      {navItems.map((item) => (
+        <a 
+          href={item.href} 
+          class="text-gray-300 hover:text-[#007bff] transition-colors duration-300 py-2 border-b border-gray-800"
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<!-- Client-side JavaScript for mobile toggle -->
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  
+  if (button && menu) {
+    button.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+  
+  body {
+    background: linear-gradient(135deg, #000000 0%, #1a1a2e 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(rgba(0, 123, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 123, 255, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: -1;
+  }
+  
+  nav {
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+  }
+  
+  a:hover {
+    text-shadow: 0 0 8px rgba(0, 123, 255, 0.8);
+  }
+  
+  .neon-border {
+    border: 1px solid #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  }
+</style>
